@@ -13,6 +13,7 @@
   </v-app>
 </template>
 
+
 <style lang="scss" scoped>
 #app, .footer {
   background: #e6d4bb;
