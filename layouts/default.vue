@@ -3,8 +3,8 @@
     <v-container>
       <nuxt />
     </v-container>
-    <v-footer absolute class="footer">
-      <v-row justify="center" class="pa-10">
+    <v-footer  class="footer">
+      <v-row justify="center" class=" pb-6 pt-2">
         <v-col>
           <h3 class="text-center">Contact us at <a href="mailto:farmer-liz@shinershillfarm.com" >Farmer-Liz@ShinersHillFarm.com</a></h3>
         </v-col>
