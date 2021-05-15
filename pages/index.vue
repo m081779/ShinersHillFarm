@@ -126,7 +126,7 @@
 		<v-row justify="center" align="center">
 			<v-col align-content="center">
 				<div class="text-center">
-					<v-img lazy-src='/logo_transparent.png' src='/logo_transparent.png' alt='' max-height="800" contain/>
+					<v-img lazy-src='/logo_transparent.png' src='/logo_transparent.png' alt='' max-height="600" contain/>
 				</div>
 			</v-col>
 		</v-row>
