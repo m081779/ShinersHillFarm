@@ -1,6 +1,6 @@
 <template>
 	<div>
-	<div v-if="isAdmin">
+	<div v-if="true">
 		<v-navigation-drawer
 			app
 			fixed
