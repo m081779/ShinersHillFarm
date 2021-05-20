@@ -1,6 +1,6 @@
 <template>
 	<div>
-	<div v-if="true">
+	<div v-if="$store.state.session.isAdmin">
 		<v-navigation-drawer
 			app
 			fixed
@@ -116,21 +116,7 @@
 			</div>
 		</v-row>
 	</div>
-	<div v-else>
-		<v-row justify="center" align="center" class="mt-10">
-			<v-col align-content="center">
-				<p class="text-center larger-header">Welcome to Shiner's Hill Farm!</title>
-				<h1 class="text-center">Site under construction, check back often!</h1>
-			</v-col>
-		</v-row>
-		<v-row justify="center" align="center">
-			<v-col align-content="center">
-				<div class="text-center">
-					<v-img lazy-src='/logo_transparent.png' src='/logo_transparent.png' alt='' max-height="600" contain/>
-				</div>
-			</v-col>
-		</v-row>
-	</div>
+	<WebPage v-else />
 	</div>
 </template>
 
@@ -144,7 +130,7 @@
 </style>
 
 <script lang="ts">
-import { Component, Vue, namespace, State } from 'nuxt-property-decorator'
+import { Component, Vue, namespace, State, Prop, Watch } from 'nuxt-property-decorator'
 import axios from 'axios'
 import { GrowCycle, SeedBatch } from '~/types/types'
 import CreateGrowCycle from '~/components/CreateGrowCycle.vue'
@@ -153,6 +139,7 @@ import CreateEnvironmentalConditionsEntry from '~/components/CreateEnvironmental
 import GrowCycleDetails from '~/components/GrowCycleDetails.vue'
 import GrowCycleCard from '~/components/GrowCycleCard.vue'
 import CompletedGrowCycleList from '~/components/CompletedGrowCycleList.vue'
+import WebPage from '~/components/WebPage.vue'
 import {
 	mdiPlusThick,
 	mdiSproutOutline,
@@ -170,6 +157,7 @@ import moment from 'moment'
 		CreateEnvironmentalConditionsEntry,
 		GrowCycleDetails,
 		CompletedGrowCycleList,
+		WebPage,
 	}
 })
 export default class Index extends Vue {
@@ -185,8 +173,6 @@ export default class Index extends Vue {
 	public environmentalConditionModal = false;
 	public detailViewModal = false;
 	public selectedGrowCycle = {} as GrowCycle;
-
-	public isAdmin = false;
 
 	public get completedGrowCycles() {
 		return this.$store.state.growCycle.growCycles.filter((growCycle: GrowCycle) => growCycle.completed)
@@ -210,6 +196,7 @@ export default class Index extends Vue {
 	}
 
 	async created () {
+		console.log(this.$store.state.session.isAdmin)
 		await Promise.all([this.getGrowCycles(), this.getSeedBatches()]);
 	}
 
