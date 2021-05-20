@@ -1,17 +1,25 @@
 <template>
-  <v-app dark id="app" :class="{changeColor: !isAdmin}">
+  <v-app :dark="isAdmin" id="app">
     <v-container>
       <nuxt />
     </v-container>
+    <v-footer  class="footer">
+      <v-row justify="center" class=" pb-6 pt-2">
+        <v-col>
+          <h3 class="text-center">Contact us at <a href="mailto:farmer-liz@shinershillfarm.com" >Farmer-Liz@ShinersHillFarm.com</a></h3>
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
 
 <style lang="scss" scoped>
-.changeColor {
-	background: #e6d4bb !important;
-	color: #5c3551 !important;
+#app, .footer {
+  background: #e6d4bb;
+  color: #5c3551;
 }
+
 </style>
 
 <script lang="ts">
@@ -19,31 +27,6 @@ import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component({})
 export default class DefaultLayout extends Vue {
-  public keys = [] as string[];
-
-  public get isAdmin() {
-    return this.$store.state.session.isAdmin
-  }
-
-  beforeMount() {
-    document.addEventListener('keyup', this.handleKeypress(this))
-  }
-  public handleKeypress(self: DefaultLayout) {
-		return function(e: KeyboardEvent) {
-			if (e.key === 'Escape') {
-				self.keys = [];
-				return;
-			}
-			self.keys.push(e.key);
-      if (self.keys.length > 'admin'.length) {
-        self.keys.shift()
-      }
-			const code = self.keys.join('')
-			if (code === 'admin') {
-        self.$store.dispatch('session/toggleIsAdmin')
-				self.keys = [];
-			}
-		}
-	}
+  public isAdmin = false;
 }
 </script>
