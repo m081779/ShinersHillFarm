@@ -17,7 +17,11 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 
-@Component({})
+@Component({
+  head: {
+    title: 'Welcome to Shiner\'s Hill Farm!'
+  }
+})
 export default class DefaultLayout extends Vue {
   public keys = [] as string[];
 
