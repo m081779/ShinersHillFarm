@@ -1,6 +1,12 @@
-const dailyGrowNotesController = require('../components/controller/dailyGrowNotesController');
+const DailyGrowNotes = require('../components/models/dailyGrowNotes');
 
 module.exports = {
 	path: '/api/createNewDailyGrowNotes',
-	handler: dailyGrowNotesController.createNewDailyGrowNotes
+	handler: function (req, res) {
+		DailyGrowNotes.create(req.body)
+			.then(result => {
+				res.status(201).json(result)
+			})
+			.catch(err => res.json(err))
+	}
 }
