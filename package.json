@@ -44,7 +44,7 @@
     "nodemon": "^1.18.9",
     "nuxt-property-decorator": "^2.9.1",
     "sass": "1.32.13",
-    "sass-loader": "7.3.1",
+    "sass-loader": "^10.2.0",
     "sass-migrator": "1.4.0",
     "vue-jest": "^4.0.0-0"
   }
