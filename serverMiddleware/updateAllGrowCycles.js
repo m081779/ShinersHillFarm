@@ -1,4 +1,4 @@
-const growCycleController = require('../controller/growCycleController');
+const growCycleController = require('../components/controller/growCycleController');
 
 module.exports = {
 	path: '/api/updateAllGrowCycles',

@@ -1,4 +1,4 @@
-const dailyEnvironmentalConditionsController = require('../controller/dailyEnvironmentalConditionsController');
+const dailyEnvironmentalConditionsController = require('../components/controller/dailyEnvironmentalConditionsController');
 
 module.exports = {
 	path: '/api/createNewDailyEnvironmentalConditions',
