@@ -1,4 +1,4 @@
-const SeedBatch = require('../components/models/seedBatch');
+const SeedBatch = require('./models/seedBatch');
 
 module.exports = {
 	path: '/api/getAllSeedBatches',

@@ -1,4 +1,4 @@
-const DailyWaterUsage = require('../models/dailyWaterUsage')
+const DailyWaterUsage = require('../../serverMiddleware/models/dailyWaterUsage')
 
 module.exports = {
 	createNewDailyWaterUsage: function (req, res) {

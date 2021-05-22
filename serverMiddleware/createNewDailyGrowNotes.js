@@ -1,4 +1,4 @@
-const DailyGrowNotes = require('../components/models/dailyGrowNotes');
+const DailyGrowNotes = require('./models/dailyGrowNotes');
 
 module.exports = {
 	path: '/api/createNewDailyGrowNotes',

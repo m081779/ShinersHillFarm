@@ -1,4 +1,4 @@
-const GrowCycle = require('../models/growCycle');
+const GrowCycle = require('../../serverMiddleware/models/growCycle');
 
 module.exports = {
     createNewGrowCycle: function (req, res) {

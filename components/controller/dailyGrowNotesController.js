@@ -1,4 +1,4 @@
-const DailyGrowNotes = require('../models/dailyGrowNotes')
+const DailyGrowNotes = require('../../serverMiddleware/models/dailyGrowNotes')
 
 module.exports = {
 	createNewDailyGrowNotes: function (req, res) {

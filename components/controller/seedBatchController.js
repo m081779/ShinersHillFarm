@@ -1,4 +1,4 @@
-const SeedBatch = require('../models/seedBatch')
+const SeedBatch = require('../../serverMiddleware/models/seedBatch')
 
 module.exports = {
     createNewSeedBatch: function (req, res) {

@@ -1,4 +1,4 @@
-const GrowCycle = require('../components/models/growCycle');
+const GrowCycle = require('./models/growCycle');
 
 module.exports = {
 	path: '/api/getAllGrowCycles',

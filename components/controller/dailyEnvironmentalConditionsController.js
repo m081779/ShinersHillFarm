@@ -1,4 +1,4 @@
-const DailyEnvironmentalConditions = require('../models/dailyEnvironmentalConditions')
+const DailyEnvironmentalConditions = require('../../serverMiddleware/models/dailyEnvironmentalConditions')
 
 module.exports = {
 	createNewDailyEnvironmentalConditions: function (req, res) {

@@ -1,4 +1,4 @@
-const DailyWaterUsage = require('../components/models/dailyWaterUsage');
+const DailyWaterUsage = require('./models/dailyWaterUsage');
 
 module.exports = {
 	path: '/api/createNewDailyWaterUsage',
