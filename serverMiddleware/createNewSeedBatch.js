@@ -1,5 +1,4 @@
-import seedBatchController from '../server/controller/seedBatchController';
-
+const seedBatchController = require('../controller/seedBatchController');
 
 module.exports = {
 	path: '/api/createNewSeedBatch',

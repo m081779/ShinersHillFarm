@@ -1,5 +1,4 @@
-import growCycleController from '../server/controller/growCycleController';
-
+const growCycleController = require('../controller/growCycleController');
 
 module.exports = {
 	path: '/api/updateAllGrowCycles',
