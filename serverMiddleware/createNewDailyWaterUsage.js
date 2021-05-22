@@ -1,4 +1,5 @@
-const dailyWaterUsageController = require('../server/controller/dailyWaterUsageController');
+import dailyWaterUsageController from '../server/controller/dailyWaterUsageController';
+
 
 module.exports = {
 	path: '/api/createNewDailyWaterUsage',

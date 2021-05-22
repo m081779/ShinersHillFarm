@@ -1,4 +1,5 @@
-const dailyGrowNotesController = require('../server/controller/dailyGrowNotesController');
+import dailyGrowNotesController from '../server/controller/dailyGrowNotesController';
+
 
 module.exports = {
 	path: '/api/createNewDailyGrowNotes',
