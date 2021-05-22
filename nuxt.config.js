@@ -51,7 +51,7 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    ['@nuxtjs/axios', withoutNullishEntries({ baseURL: baseUrl })],
+    '@nuxtjs/axios',
   ],
   /*
   ** Axios module configuration
@@ -96,7 +96,6 @@ module.exports = {
 
   },
   serverMiddleware: [
-    '~/serverMiddleware/ok',
     '~/serverMiddleware/getAllGrowCycles',
     '~/serverMiddleware/createNewGrowCycle',
     '~/serverMiddleware/getAllSeedBatches',
