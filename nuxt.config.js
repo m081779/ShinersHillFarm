@@ -2,6 +2,8 @@ const colors = require('vuetify/es5/util/colors').default
 const routePath = '/server/routes/api';
 const serveStatic = require('serve-static');
 
+const baseUrl = process.env.baseUrl || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined)
+
 module.exports = {
   telemetry: false,
   generate: {
@@ -49,7 +51,7 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    ['@nuxtjs/axios', withoutNullishEntries({ baseURL: baseUrl })],
   ],
   /*
   ** Axios module configuration
@@ -108,4 +110,8 @@ module.exports = {
 
   ],
 
+}
+
+function withoutNullishEntries(x) {
+  return Object.fromEntries(Object.entries(x).filter(([k, v]) => v != null))
 }
